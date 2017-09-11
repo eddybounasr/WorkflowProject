@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+ 
+<fields> 
+
+   <field>
+   <order>1</order>
+   <name>DKEY1</name>
+   <sqlType>NUMBER</sqlType>
+   <sqlSize>10</sqlSize>
+   <sqlPK>checked</sqlPK>
+   <desc>dKey</desc>
+   <type>Numeric</type>
+   <min>1</min>
+   <min_sort_order></min_sort_order>
+   <formType>TextBox</formType>
+   <size>15</size>
+   <mandatory>unchecked</mandatory>
+   <insert>unchecked</insert>
+   <update>unchecked</update>
+   <show>checked</show>
+   <unicity>unchecked</unicity>
+   </field>
+
+
+   <field>
+   <order>1</order>
+   <name>DKEY</name>
+   <sqlType>NUMBER</sqlType>
+   <sqlSize>10</sqlSize>
+   <sqlPK>checked</sqlPK>
+   <desc>first name</desc>
+   <type>Numeric</type>
+   <min>1</min>
+   <min_sort_order></min_sort_order>
+   <formType>TextBox</formType>
+   <size>15</size>
+   <mandatory>unchecked</mandatory>
+   <insert>unchecked</insert>
+   <update>unchecked</update>
+   <show>checked</show>
+   <unicity>unchecked</unicity>
+   </field>
+
+
+   <field>
+   <order>1</order>
+   <name>DKEY</name>
+   <sqlType>NUMBER</sqlType>
+   <sqlSize>10</sqlSize>
+   <sqlPK>checked</sqlPK>
+   <desc>Last Name</desc>
+   <type>Numeric</type>
+   <min>1</min>
+   <min_sort_order></min_sort_order>
+   <formType>TextBox</formType>
+   <size>15</size>
+   <mandatory>unchecked</mandatory>
+   <insert>unchecked</insert>
+   <update>unchecked</update>
+   <show>checked</show>
+   <unicity>unchecked</unicity>
+   </field>
+   
+   <field>
+   <order>1</order>
+   <name>DKEY1</name>
+   <sqlType>NUMBER</sqlType>
+   <sqlSize>10</sqlSize>
+   <sqlPK>checked</sqlPK>
+   <desc>Time</desc>
+   <type>Numeric</type>
+   <min>1</min>
+   <min_sort_order></min_sort_order>
+   <formType>date</formType>
+   <size>15</size>
+   <mandatory>unchecked</mandatory>
+   <insert>unchecked</insert>
+   <update>unchecked</update>
+   <show>checked</show>
+   <unicity>unchecked</unicity>
+   </field>
+   
+   <field>
+   <order>1</order>
+   <name>DKEY1</name>
+   <sqlType>NUMBER</sqlType>
+   <sqlSize>10</sqlSize>
+   <sqlPK>checked</sqlPK>
+   <desc>Udpate</desc>
+   <type>Numeric</type>
+   <min>1</min>
+   <min_sort_order></min_sort_order>
+   <formType>CheckBox</formType>
+   <size>15</size>
+   <mandatory>unchecked</mandatory>
+   <insert>unchecked</insert>
+   <update>unchecked</update>
+   <show>checked</show>
+   <unicity>unchecked</unicity>
+   </field>
+   
+   <field>
+   <order>1</order>
+   <name>DKEY1</name>
+   <sqlType>NUMBER</sqlType>
+   <sqlSize>10</sqlSize>
+   <sqlPK>checked</sqlPK>
+   <desc>ListOfRecords</desc>
+   <type>Numeric</type>
+   <min>1</min>
+   <min_sort_order></min_sort_order>
+   <formType>Select</formType>
+   <size>15</size>
+   <mandatory>unchecked</mandatory>
+   <insert>unchecked</insert>
+   <update>unchecked</update>
+   <show>checked</show>
+   <unicity>unchecked</unicity>
+   </field>
+   
+   <field>
+   <order>1</order>
+   <name></name>
+   <sqlType>NUMBER</sqlType>
+   <sqlSize>10</sqlSize>
+   <sqlPK>checked</sqlPK>
+   <desc>Submit</desc>
+   <type>Numeric</type>
+   <min>1</min>
+   <min_sort_order></min_sort_order>
+   <formType>Submit</formType>
+   <size>15</size>
+   <mandatory>unchecked</mandatory>
+   <insert>unchecked</insert>
+   <update>unchecked</update>
+   <show>checked</show>
+   <unicity>unchecked</unicity>
+   </field>
+
+
+</fields>
