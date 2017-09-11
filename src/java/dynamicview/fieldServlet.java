@@ -40,17 +40,14 @@ private static final long serialVersionUID = 1L;
 @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-   
-     
+ 
       response.setContentType("text/html");
       PrintWriter out = response.getWriter();
-      String title = "Reading Checkbox Data";
-       for(field ListOfField : FieldList){
-      String FieldName = ListOfField.name;
-      out.println(request.getParameter("FieldName"));
+      for(field ListOfField : FieldList){         
+      out.println(request.getParameter(ListOfField.name));
        }
         
-        
+    
     }
 
 }

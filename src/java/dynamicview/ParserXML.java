@@ -23,7 +23,7 @@ public class ParserXML {
 	public static List<field> fillFieldsInformation() throws SAXException, IOException
 	{
 		
-		    String filePath = "C:\\Users\\User\\Desktop\\JAVA-Projects\\Dynamicview\\web\\WEB-INF\\fields.xml";
+		    String filePath = "C:\\Users\\User\\Desktop\\Dynamicview\\web\\WEB-INF\\fields.xml";
 	        BufferedReader reader = new BufferedReader(new FileReader (filePath));
 	        String         line = null;
 	        StringBuilder  stringBuilder = new StringBuilder();

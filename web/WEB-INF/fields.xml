@@ -44,7 +44,7 @@
 
    <field>
    <order>1</order>
-   <name>DKEY</name>
+   <name>DKEY2</name>
    <sqlType>NUMBER</sqlType>
    <sqlSize>10</sqlSize>
    <sqlPK>checked</sqlPK>
@@ -63,7 +63,7 @@
    
    <field>
    <order>1</order>
-   <name>DKEY1</name>
+   <name>DKEY3</name>
    <sqlType>NUMBER</sqlType>
    <sqlSize>10</sqlSize>
    <sqlPK>checked</sqlPK>
@@ -82,7 +82,7 @@
    
    <field>
    <order>1</order>
-   <name>DKEY1</name>
+   <name>DKEY4</name>
    <sqlType>NUMBER</sqlType>
    <sqlSize>10</sqlSize>
    <sqlPK>checked</sqlPK>
@@ -101,7 +101,7 @@
    
    <field>
    <order>1</order>
-   <name>DKEY1</name>
+   <name>DKEY5</name>
    <sqlType>NUMBER</sqlType>
    <sqlSize>10</sqlSize>
    <sqlPK>checked</sqlPK>
@@ -120,7 +120,7 @@
    
    <field>
    <order>1</order>
-   <name></name>
+   <name>DKEY6</name>
    <sqlType>NUMBER</sqlType>
    <sqlSize>10</sqlSize>
    <sqlPK>checked</sqlPK>
