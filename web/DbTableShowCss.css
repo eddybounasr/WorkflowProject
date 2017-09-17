@@ -1,0 +1,39 @@
+<style type="text/css">
+table.DbTableShow {
+  border: 0px solid #1C6EA4;
+  width: 25%;
+  text-align: left;
+  border-collapse: collapse;
+}
+table.DbTableShow td, table.DbTableShow th {
+  border: 3px solid #FFFFFF;
+  padding: 4px 5px;
+ 
+}
+table.DbTableShow tbody td {
+  font-size: 12px;
+}
+table.DbTableShow tr:nth-child(even) {
+  background: #D0E4F5;
+}
+table.DbTableShow thead {
+  background: #1C6EA4;
+  background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  border-bottom: 2px solid #444444;
+}
+table.DbTableShow thead th {
+  font-size: 17px;
+  font-weight: bold;
+  color: #FFFFFF;
+  border-left: 2px solid #D0E4F5;
+}
+table.DbTableShow thead th:first-child {
+  border-left: none;
+}
+
+table.DbTableShow tfoot td {
+  font-size: 14px;
+}
+</style>

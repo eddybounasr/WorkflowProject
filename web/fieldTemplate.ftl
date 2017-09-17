@@ -1,5 +1,5 @@
 <html><head><title>Dynamic view</title>
-        <#include "DivCss.css">
+<#include "DivCss.css">
   <body>
     <form name="ListOfInfo" action="hello" method="POST">
     <div class="WholeTable">
