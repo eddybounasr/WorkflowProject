@@ -43,7 +43,7 @@
         <url-pattern>*.ftl</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>Getrecord</servlet-name>
+        <servlet-name>GetRecord</servlet-name>
         <servlet-class>dynamicview.GetRecord</servlet-class>
     </servlet>
     <servlet-mapping>
@@ -51,11 +51,11 @@
         <url-pattern>/getrecord</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>TablesShow</servlet-name>
-        <servlet-class>dynamicview.TablesShow</servlet-class>
+        <servlet-name>ShowTables</servlet-name>
+        <servlet-class>dynamicview.ShowTables</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>TablesShow</servlet-name>
+        <servlet-name>ShowTables</servlet-name>
         <url-pattern>/showtables</url-pattern>
     </servlet-mapping>
 </web-app>

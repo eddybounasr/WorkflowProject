@@ -1,7 +1,5 @@
 package ConnectionManager;
 
-import ConnectionManager.IDBManager;
-import ConnectionManager.DatabaseBuilder;
 import org.apache.commons.dbcp.BasicDataSource;
 import javax.sql.DataSource;
 import java.sql.*;
@@ -25,7 +23,7 @@ public class mySqlDbManager implements IDBManager {
 	    	return mySqlDbMan;
 	    }
 	    */
-	   public  mySqlDbManager(String dbName)
+	    public mySqlDbManager(String dbName)
 	    {
 	    	if(dataSource== null)
 	    	{

@@ -22,7 +22,6 @@ public class GetRecord extends HttpServlet{
 private static final long serialVersionUID = 1L;
 private List<field> FieldList = new ArrayList<field>();
 
-Hashtable<String, String> hashTablesInformationxml=dbTablesObjectManager.getTablesSchemaXml("den3sp9ne84ipr", "CSTABLES");
     {
     try {
         FieldList.addAll(ParserXML.fillFieldsInformation());

@@ -33,7 +33,7 @@ public class dbTablesObjectManager {
 	public static Hashtable<String, List<field>>   getTablesSchema(String dbName,String tableNames )
 	{
 		Hashtable<String, List<field>> retVal= new Hashtable<String, List<field>>();
-		ResultSet rs=DatabaseBuilder.getInstance().getDatabase("sysDb").SelectStatement("select column_name,ordinal_position,is_nullable,data_type,character_maximum_length,udt_name,table_name from INFORMATION_SCHEMA.COLUMNS where table_catalog='"+dbName+"' and table_name in('"+tableNames+"')");
+		ResultSet rs=DatabaseBuilder.getInstance().getDatabase("sysDb").SelectStatement("select column_name,ordinal_position,is_nullable,data_type,character_maximum_length,udt_name,table_name from INFORMATION_SCHEMA.COLUMNS where table_name in('"+tableNames+"')");
 		try 
 		{
 			while (rs.next()) 
@@ -76,7 +76,7 @@ public class dbTablesObjectManager {
 	{
 		String retVal="<field>";
 		retVal+="<order>"+fieldObj.getOrder()+"</order>";
-        retVal+="<name>"+fieldObj.getName()+"</name>";
+                retVal+="<name>"+fieldObj.getName()+"</name>";
 		retVal+="<sqlTye>"+fieldObj.getsqlType()+"</sqlType>";
 		retVal+="<sqlSize>"+fieldObj.getsqlSize()+"</sqlSize>";
 		retVal+="<sqlPK>"+fieldObj.getsqlPK()+"</sqlPK>";
@@ -102,7 +102,7 @@ public class dbTablesObjectManager {
 		retVal.setsqlType(typefield);
 		if(!typefield.contains("int4"))
 		{
-			retVal.setsqlSize(Integer.parseInt(lengthField));
+			retVal.setsqlSize(50);
 		}
 		retVal.setdesc(fieldName);
      	retVal.settype(typefield);

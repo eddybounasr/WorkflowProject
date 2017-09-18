@@ -1,7 +1,7 @@
 <html><head><title>DbTableShow</title>
 <#include "DbTableShowCss.css">
       <body>
-          <form name="ListOfTables" action="show" method="POST">
+          <form name="ListOfTables" action="showtables" method="POST">
   <table class="DbTableShow">
 
       <thead>

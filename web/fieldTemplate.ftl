@@ -1,7 +1,7 @@
 <html><head><title>Dynamic view</title>
 <#include "DivCss.css">
   <body>
-    <form name="ListOfInfo" action="hello" method="POST">
+    <form name="ListOfInfo" action="/getrecord" method="POST">
     <div class="WholeTable">
 
 <#list Fields as field>  
