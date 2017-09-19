@@ -60,7 +60,7 @@ public class dbTablesObjectManager {
 		Hashtable<String, List<field>> hashTablesInformation=getTablesSchema(dbName,tableNames);
 		for (String tableName : hashTablesInformation.keySet()) 
 		{
-    		String xmlTableSxchema="<?xml version='1.0' encoding='ISO-8859-1'?><fields> ";
+    		String xmlTableSxchema="<?xml version=1.0 encoding=ISO-8859-1?><fields> ";
 			List<field> listFields=	hashTablesInformation.get(tableName);
 		 	for (field field : listFields) {
 		 		xmlTableSxchema+= getXmlFormat(field);

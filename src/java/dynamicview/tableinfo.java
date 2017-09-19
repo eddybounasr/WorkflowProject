@@ -4,15 +4,15 @@ public class tableinfo implements java.io.Serializable{
      String tablename;
      String databasename;
     
-    tableinfo(){
+    public tableinfo(){
      
     }
     
-    public String gett_name(){
+    public String gettablename(){
         return tablename;
     }
     
-    public String getdb_name(){
+    public String getdatabasename(){
         return databasename;
         
     }

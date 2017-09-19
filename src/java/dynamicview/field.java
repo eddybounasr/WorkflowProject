@@ -1,9 +1,9 @@
 package dynamicview;
 
-public class field  implements java.io.Serializable {
+public class field implements java.io.Serializable {
   
     private int order;
-    String name;
+    private String name;
     private String sqlType;
     private int sqlSize;
     private boolean sqlPK;
@@ -133,4 +133,3 @@ public class field  implements java.io.Serializable {
 
     
 }
-

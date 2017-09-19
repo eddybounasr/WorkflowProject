@@ -1,8 +1,13 @@
 package dynamicview;
 import ConnectionManager.DatabaseBuilder;
 import ConnectionManager.dbTablesObjectManager;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import java.io.Writer;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -19,11 +24,11 @@ import javax.servlet.http.HttpServletResponse;
 public class ShowTables extends HttpServlet{
 
  private static final long serialVersionUID = 1L;
- private List<tableinfo> table_name_list = new ArrayList<tableinfo>();
 
  @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+ List<tableinfo> table_name_list = new ArrayList<tableinfo>();
  Hashtable<String, String> hashTablesExistngTables= new Hashtable<String,String>();
  ResultSet rs= DatabaseBuilder.getInstance().getDatabase("sysDb").SelectStatement("SELECT * from PUBLIC.cstables") ;
     try {
@@ -57,21 +62,26 @@ public class ShowTables extends HttpServlet{
 @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {  
-   
+  
         String[] values = request.getParameterValues("ALL");
-        response.setContentType("text/html");
-      PrintWriter out = response.getWriter();
-    for(int i=0;i<values.length;i++){
-      
+        for(int i=0;i<values.length;i++){
            Hashtable<String, String> hashTablesInformationxml=dbTablesObjectManager.getTablesSchemaXml("sysDb",values[i]);
-     
-           String Query = "INSERT INTO public.cstables(dbname, tablename, xmlfield) VALUES ('sysDb','"+values[i]+"','"+hashTablesInformationxml.get(values[i])+"')";
-      out.println(Query);
-           DatabaseBuilder.getInstance().getDatabase("sysDb").InsertStatement(Query);
- 
-    } 
-
-     doGet(request, response);
+           
+           
+           String str=hashTablesInformationxml.get(values[i]);
+                       /*File output
+			Writer file = new FileWriter (new File("C:\\xml.txt"));
+			file.write(str);
+			file.flush();
+			file.close();*/
+  
+           String Query = "INSERT INTO public.cstables(dbname,tablename,xmlfield) VALUES ('sysDb','"+values[i]+"','"+hashTablesInformationxml.get(values[i])+"')";
+            DatabaseBuilder.getInstance().getDatabase("sysDb").InsertStatement(Query);
+           
+    doGet(request, response);
+   
+        } 
+  
     }
-    
+
 }
