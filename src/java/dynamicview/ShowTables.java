@@ -1,5 +1,4 @@
 package dynamicview;
-
 import ConnectionManager.DatabaseBuilder;
 import ConnectionManager.dbTablesObjectManager;
 import java.io.IOException;
@@ -8,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -17,46 +17,40 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class ShowTables extends HttpServlet{
-private static final long serialVersionUID = 1L;
-final ArrayList<String> table_name_list = new ArrayList<String>();
 
-@Override
+ private static final long serialVersionUID = 1L;
+ private List<tableinfo> table_name_list = new ArrayList<tableinfo>();
+
+ @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    final ArrayList<String> table_name_list = new ArrayList<String>();
-Hashtable<String, String> hashTablesExistngTables= new Hashtable<String,String>();
-   ResultSet rs= DatabaseBuilder.getInstance().getDatabase("sysDb").SelectStatement("SELECT * from PUBLIC.cstables") ;
-   
-// ResultSet rs= DatabaseBuilder.getInstance().getDatabase("sysDb").SelectStatement("SELECT table_schema,table_name FROM information_schema.tables where table_schema ='public' and table_name Not IN (SELECT tablename FROM PUBLIC.cstables);");
-    
+ Hashtable<String, String> hashTablesExistngTables= new Hashtable<String,String>();
+ ResultSet rs= DatabaseBuilder.getInstance().getDatabase("sysDb").SelectStatement("SELECT * from PUBLIC.cstables") ;
     try {
         while (rs.next()) {
             String table_name = rs.getString("tablename");
             String db_name = rs.getString("dbname");
-       //     table_name_list.add(table_name);
-       hashTablesExistngTables.put(table_name+""+db_name,table_name);
-       
-        }
-        
+       hashTablesExistngTables.put(table_name+""+db_name,table_name); 
+        }   
     } catch (SQLException ex) {
         Logger.getLogger(GetRecord.class.getName()).log(Level.SEVERE, null, ex);
     }
     for (String dbName : DatabaseBuilder.getInstance().getAllDatabases().keySet()) 
-			{
-				Hashtable< String , String> hashTableNames= dbTablesObjectManager.getTablesOfSchema(dbName);
-		for (String tableName : hashTableNames.keySet()) {
-			//System.out.println("tablename"+ tableName);
-                        String tablename_dbname=tableName+""+dbName;
-                        if (!hashTablesExistngTables.containsKey(tablename_dbname)){
-                            table_name_list.add(tableName);
-                        }
-		}
-    request.setAttribute("ShowTables",table_name_list);
-    request.getRequestDispatcher("/DbTableShow.ftl").forward(request, response);
-    
-                        
-   }
+          {
+                    Hashtable< String , String> hashTableNames= dbTablesObjectManager.getTablesOfSchema(dbName);
+                      for (String tableName : hashTableNames.keySet()) {                     
+                          String tablename_dbname=tableName+""+dbName;
+                             if (!hashTablesExistngTables.containsKey(tablename_dbname)){
+                                 tableinfo table_info=new tableinfo(tableName,dbName);
+                                  table_name_list.add(table_info);                                    
+                          }                
+	            }
+        
+             }
+               request.setAttribute("ShowTables",table_name_list);
+               request.getRequestDispatcher("/DbTableShow.ftl").forward(request, response);
     }
+    
 @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {  
@@ -74,7 +68,7 @@ Hashtable<String, String> hashTablesExistngTables= new Hashtable<String,String>(
  
     } 
 
-     /*  doGet(request, response);*/
+     doGet(request, response);
     }
     
 }

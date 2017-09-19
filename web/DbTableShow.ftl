@@ -11,14 +11,14 @@
               <th>Ajouter</th>
               <th>Nom de la vue</th>
               <th>Type</th>
-              <th>Remarques</th>
+              <th>Nom_BD</th>
           </tr>
           
       </thead>
       <tbody>
       <#list ShowTables as showtable>
       <tr>
-      <td><input type="checkbox" id="${showtable}" name="ALL" value="${showtable}"/></td><td></td><td>${showtable}</td><td>TABLE</td><td><input type="text"/></td>
+      <td><input type="checkbox" id="${showtable.tablename}" name="ALL" value="${showtable.tablename}"/></td><td></td><td>${showtable.tablename}</td><td>TABLE</td><td>${showtable.databasename}</td>
       
       </tr>
        </#list>
