@@ -1,12 +1,11 @@
 package dynamicview;
 
 public class tableinfo implements java.io.Serializable{
-    private String tablename;
-    private String databasename;
+     String tablename;
+     String databasename;
     
-    tableinfo(String tablename , String dbname){
-     this.databasename=dbname;
-     this.tablename=tablename;
+    tableinfo(){
+     
     }
     
     public String gett_name(){

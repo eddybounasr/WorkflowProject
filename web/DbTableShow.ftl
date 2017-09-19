@@ -16,9 +16,9 @@
           
       </thead>
       <tbody>
-      <#list ShowTables as showtable>
+      <#list TablesShow as tableshow>
       <tr>
-      <td><input type="checkbox" id="${showtable.tablename}" name="ALL" value="${showtable.tablename}"/></td><td></td><td>${showtable.tablename}</td><td>TABLE</td><td>${showtable.databasename}</td>
+      <td><input type="checkbox" id="${tableshow.tablename}" name="ALL" value="${tableshow.tablename}"/></td><td></td><td>${tableshow.tablename}</td><td>TABLE</td><td>${tableshow.databasename}</td>
       
       </tr>
        </#list>
