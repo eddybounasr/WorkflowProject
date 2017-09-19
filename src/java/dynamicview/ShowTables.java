@@ -41,14 +41,17 @@ public class ShowTables extends HttpServlet{
                       for (String tableName : hashTableNames.keySet()) {                     
                           String tablename_dbname=tableName+""+dbName;
                              if (!hashTablesExistngTables.containsKey(tablename_dbname)){
-                                 tableinfo table_info=new tableinfo(tableName,dbName);
+                                 tableinfo table_info=new tableinfo();
+                                 table_info.setdatabasename(dbName);
+                                 table_info.settablename(tableName);
                                   table_name_list.add(table_info);                                    
                           }                
 	            }
         
              }
-               request.setAttribute("ShowTables",table_name_list);
-               request.getRequestDispatcher("/DbTableShow.ftl").forward(request, response);
+
+              request.setAttribute("TablesShow",table_name_list);
+              request.getRequestDispatcher("/DbTableShow.ftl").forward(request,response);
     }
     
 @Override
