@@ -61,26 +61,25 @@ public class ShowTables extends HttpServlet{
     
 @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {  
-  
+            throws ServletException, IOException { 
+      
         String[] values = request.getParameterValues("ALL");
         for(int i=0;i<values.length;i++){
-           Hashtable<String, String> hashTablesInformationxml=dbTablesObjectManager.getTablesSchemaXml("sysDb",values[i]);
-           
-           
-           String str=hashTablesInformationxml.get(values[i]);
-                       /*File output
+            String WichDb=request.getParameter(values[i]);
+          Hashtable<String, String> hashTablesInformationxml=dbTablesObjectManager.getTablesSchemaXml(WichDb,values[i]);
+ 
+         /*  String str=hashTablesInformationxml.get(values[i]);
+                       File output
 			Writer file = new FileWriter (new File("C:\\xml.txt"));
 			file.write(str);
 			file.flush();
 			file.close();*/
-  
-           String Query = "INSERT INTO public.cstables(dbname,tablename,xmlfield) VALUES ('sysDb','"+values[i]+"','"+hashTablesInformationxml.get(values[i])+"')";
-            DatabaseBuilder.getInstance().getDatabase("sysDb").InsertStatement(Query);
-           
-    doGet(request, response);
-   
+
+          String Query = "INSERT INTO public.cstables(dbname,tablename,xmlfield) VALUES ('"+WichDb+"','"+values[i]+"','"+hashTablesInformationxml.get(values[i])+"')";
+           DatabaseBuilder.getInstance().getDatabase("sysDb").InsertStatement(Query);
+
         } 
+      doGet(request, response);
   
     }
 
