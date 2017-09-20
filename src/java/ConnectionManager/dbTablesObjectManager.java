@@ -60,7 +60,7 @@ public class dbTablesObjectManager {
 		Hashtable<String, List<field>> hashTablesInformation=getTablesSchema(dbName,tableNames);
 		for (String tableName : hashTablesInformation.keySet()) 
 		{
-    		String xmlTableSxchema="<?xml version=1.0 encoding=ISO-8859-1?><fields> ";
+    		String xmlTableSxchema="<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?><fields> ";
 			List<field> listFields=	hashTablesInformation.get(tableName);
 		 	for (field field : listFields) {
 		 		xmlTableSxchema+= getXmlFormat(field);
@@ -77,7 +77,7 @@ public class dbTablesObjectManager {
 		String retVal="<field>";
 		retVal+="<order>"+fieldObj.getOrder()+"</order>";
                 retVal+="<name>"+fieldObj.getName()+"</name>";
-		retVal+="<sqlTye>"+fieldObj.getsqlType()+"</sqlType>";
+		retVal+="<sqlType>"+fieldObj.getsqlType()+"</sqlType>";
 		retVal+="<sqlSize>"+fieldObj.getsqlSize()+"</sqlSize>";
 		retVal+="<sqlPK>"+fieldObj.getsqlPK()+"</sqlPK>";
 		retVal+="<desc>"+fieldObj.getdesc()+"</desc>";
@@ -90,7 +90,8 @@ public class dbTablesObjectManager {
 		retVal+="<insert>"+fieldObj.getinsert()+"</insert>";
 		retVal+="<update>"+fieldObj.getupdate()+"</update>";
 		retVal+="<show>"+fieldObj.getshow()+"</show>";
-	    retVal+="<unicity>"+fieldObj.getunicity()+"</unicity>";
+	        retVal+="<unicity>"+fieldObj.getunicity()+"</unicity>";
+                retVal+="</field>";
 		return retVal;
 	}
 	

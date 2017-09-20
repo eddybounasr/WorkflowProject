@@ -3,7 +3,7 @@ package dynamicview;
 public class field implements java.io.Serializable {
   
     private int order;
-    private String name;
+    String name;
     private String sqlType;
     private int sqlSize;
     private boolean sqlPK;

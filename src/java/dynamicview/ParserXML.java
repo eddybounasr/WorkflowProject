@@ -115,7 +115,7 @@ public class ParserXML {
 	 private static boolean checked(String tagName, Element element){
 	        boolean retVal = true;
 	        String fieldValue=getTagValue(tagName,element);
-	       if(fieldValue.contains("unchecked"))
+	       if(!fieldValue.contains("true"))
            {
 	         retVal= false;
 	       }
